@@ -11,8 +11,8 @@ public class Character {
 		this.name = name;
 		this.stats = stats;
 		this.money = 4000;
-		this.showInfo();
-		this.getJob();
+		//this.showInfo();
+		//this.getJob();
 			
 	}
 
