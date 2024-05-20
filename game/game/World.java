@@ -49,7 +49,7 @@ public class World extends Character{
 				this.waterNum = this.waterNum + 1;
 				System.out.println("You bought a water");
 				System.out.println("You have "+ this.waterNum);
-				System.out.println("You have"+ this.money);
+				System.out.println("You have= "+ this.money);
 				break;
 			}
 			else {
