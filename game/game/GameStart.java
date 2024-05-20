@@ -1,4 +1,4 @@
-package game_chr;
+package game;
 import java.util.Scanner;
 
 public class GameStart {

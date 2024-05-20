@@ -1,4 +1,4 @@
-package game_chr;
+package game;
 
 public class Thief extends Character {
 	String specialty;
