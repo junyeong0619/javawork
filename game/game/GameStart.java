@@ -6,7 +6,7 @@ public class GameStart {
 	public static void main(String[] args) {
 		Character character = null;
 		Scanner scanner = new Scanner(System.in);
-		String flag = " ";
+		String food = " ";
 		String enterFlag = "";
 		String skillType = " ";
 		String jobType = " ";
@@ -51,7 +51,7 @@ public class GameStart {
 		while (world.hp > 0) {
 			if (character != null) {
 				world.showHP();
-				System.out.println("Enter the skill you want [q,w,e,r] or shop , region, fight, eat");
+				System.out.println("shop , region, fight, eat");
 				skillType = scanner.nextLine();
 				if (skillType.equals("shop")) {
 					world.showShop();
@@ -61,7 +61,6 @@ public class GameStart {
 						|| skillType.equals("r")) {
 					character.useSkill(skillType);
 					System.out.println("Enter quit to quit");
-					flag = scanner.nextLine();
 				} else if (skillType.equals("fight")) {
 					if (world.region.equals("henesis")) {
 						Monster monster = new Slime();
@@ -99,7 +98,6 @@ public class GameStart {
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack2();
 								world.getDamage(101);
-								flag = "quit";
 
 							} else if (skillType.equals("e")) {
 								monster.monsterAttack();
@@ -171,13 +169,15 @@ public class GameStart {
 						System.out.println("You should move to other region");
 					}
 
+				} else if (skillType.equals("eat")) {
+					System.out.println("What you want to eat? [bread,water]");
+					food = scanner.nextLine();
+					world.eatFood(food);
+
 				}
-				else if(skillType.equals("eat")) {
-					world.eatFood();
-					
-				}
+
 			}
-//111
+
 		}
 		System.out.println("Game out. You lose the Game. Try again!!");
 

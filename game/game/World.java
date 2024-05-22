@@ -126,24 +126,27 @@ public class World extends Character {
 		System.out.println("Your money is =" + this.money);
 	}
 
-	public void eatFood() {
-		String food;
-		System.out.println("What you want to eat? [bread,water]");
-		food = scanner.nextLine();
+	public void eatFood(String food) {
+		//System.out.println("What you want to eat? [bread,water]");
+		//food = scanner.nextLine();
 		if (food.equals("bread")) {
 			if (this.breadNum > 0) {
 				this.breadNum -= 1;
 				if (this.bag[0][0] == "bread") {
 					this.bag[0][0] = null;
+					this.hp += 10;
 					System.out.println("Successfully eat Bread!");
 				} else if (this.bag[0][1] == "bread") {
 					this.bag[0][1] = null;
+					this.hp += 10;
 					System.out.println("Successfully eat Bread!");
 				} else if (this.bag[0][2] == "bread") {
 					this.bag[0][2] = null;
+					this.hp += 10;
 					System.out.println("Successfully eat Bread!");
 				} else if (this.bag[0][3] == "bread") {
 					this.bag[0][3] = null;
+					this.hp += 10;
 					System.out.println("Successfully eat Bread!");
 				} else {
 					System.out.println("You don't have any bread");
@@ -155,15 +158,19 @@ public class World extends Character {
 				this.waterNum -= 1;
 				if (this.bag[0][0] == "water") {
 					this.bag[0][0] = null;
+					this.hp += 5;
 					System.out.println("Sucessfully eat Water");
 				} else if (this.bag[0][1] == "water") {
 					this.bag[0][1] = null;
+					this.hp += 5;
 					System.out.println("Sucessfully eat Water");
 				} else if (this.bag[0][2] == "water") {
 					this.bag[0][2] = null;
+					this.hp += 5;
 					System.out.println("Sucessfully eat Water");
 				} else if (this.bag[0][3] == "water") {
 					this.bag[0][3] = null;
+					this.hp += 5;
 					System.out.println("Sucessfully eat Water");
 				} else {
 					System.out.println("You don't have any Water");
@@ -171,7 +178,7 @@ public class World extends Character {
 			}
 		} else {
 			System.out.println("You wrote wrong word!");
-			this.eatFood();
+			// this.eatFood();
 		}
 
 	}
