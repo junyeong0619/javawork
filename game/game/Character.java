@@ -5,12 +5,16 @@ public class Character {
 	String name;
 	String stats;
 	String weapons;
+	String[][] bag;
 	int money;
+	int hp;
 	
 	public Character(String name, String stats) {
 		this.name = name;
 		this.stats = stats;
 		this.money = 4000;
+		this.bag = new String[1][];
+		this.hp = 100;
 		//this.showInfo();
 		//this.getJob();
 			
@@ -71,6 +75,18 @@ public class Character {
 	}
 	public void s() {
 		System.out.println("Hidden skill for someone");
+	}
+	
+	public void bagExtend() {
+		System.out.println("Bag is going to extend");
+		this.bag = new String[1][4];
+	}
+	public void showHP() {
+		System.out.println("Your HP is now: "+this.hp);
+	}
+	public void getDamage(int a) {
+		this.hp -= a;
+		
 	}
 }
 

@@ -9,6 +9,7 @@ public class Warrior extends Character {
         this.specialty = "warrior";
         this.weapons = "sword";
         this.getWeapons();
+        this.bagExtend();
 	}
 	
 	public void getWeapons() {

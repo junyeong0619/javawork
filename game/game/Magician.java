@@ -9,6 +9,7 @@ public class Magician extends Character {
         this.specialty = "magician";
         this.weapons = "wand";
         this.getWeapons();
+        this.bagExtend();
 	}
 	
 	public void getWeapons() {

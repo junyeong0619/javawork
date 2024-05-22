@@ -48,9 +48,10 @@ public class GameStart {
 			System.out.println("Nothing");
 		}
 
-		while (!flag.equals("quit")) {
+		while (world.hp > 0) {
 			if (character != null) {
-				System.out.println("Enter the skill you want [q,w,e,r] or shop , region, fight");
+				world.showHP();
+				System.out.println("Enter the skill you want [q,w,e,r] or shop , region, fight, eat");
 				skillType = scanner.nextLine();
 				if (skillType.equals("shop")) {
 					world.showShop();
@@ -74,11 +75,12 @@ public class GameStart {
 								break;
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack();
+								world.getDamage(10);
 								world.money -= 200;
 								break;
 							} else if (skillType.equals("e")) {
 								monster.monsterAttack2();
-								flag = "quit";
+								world.getDamage(101);
 							} else {
 								System.out.println("nothing happened");
 								break;
@@ -96,10 +98,12 @@ public class GameStart {
 								break;
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack2();
+								world.getDamage(101);
 								flag = "quit";
 
 							} else if (skillType.equals("e")) {
 								monster.monsterAttack();
+								world.getDamage(20);
 								world.money -= 500;
 								break;
 
@@ -120,11 +124,13 @@ public class GameStart {
 								break;
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack2();
+								world.getDamage(40);
 								world.region = "henesis";
 								break;
 
 							} else if (skillType.equals("e")) {
 								monster.monsterAttack();
+								world.getDamage(70);
 								world.money += 1000;
 								break;
 
@@ -145,11 +151,13 @@ public class GameStart {
 								break;
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack2();
+								world.getDamage(5);
 								world.region = "ferrion";
 								break;
 
 							} else if (skillType.equals("e")) {
 								monster.monsterAttack();
+								world.getDamage(25);
 								world.money += -700;
 								break;
 
@@ -164,9 +172,14 @@ public class GameStart {
 					}
 
 				}
+				else if(skillType.equals("eat")) {
+					world.eatFood();
+					
+				}
 			}
 //111
 		}
+		System.out.println("Game out. You lose the Game. Try again!!");
 
 	}
 }
