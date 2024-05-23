@@ -16,7 +16,7 @@ public class Slime extends Monster {
 			public void run() {
 				System.out.println("It looks like a green liquid");
 				try {
-					for(int i= 0; i< 5; i++) {
+					for(int i= 0; i< 3; i++) {
 						System.out.println(name + " is bouncing");
 						if (hp <=0) {
 							break;
@@ -28,7 +28,7 @@ public class Slime extends Monster {
 				catch(InterruptedException e) {
 					System.out.println(name + "has been interrupted!");
 				}
-				System.out.println(name + "has finished its actions.");
+				System.out.println(name + "has been summoned");
 			}
 			
 		});

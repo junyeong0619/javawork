@@ -29,8 +29,7 @@ public class GameStart {
 			jobType = "thief";
 		}
 
-		//World world = new World(name, stats, jobType);
-		Fight world = new Fight(name,stats,jobType);
+		Fight world = new Fight(name, stats, jobType);
 		while (world.hp > 0) {
 			if (character != null) {
 				world.showHP();
@@ -40,44 +39,43 @@ public class GameStart {
 					world.showShop();
 				} else if (skillType.equals("region")) {
 					world.regionShow();
-				} else if (skillType.equals("q") || skillType.equals("w") || skillType.equals("e")
-						|| skillType.equals("r")) {
-					character.useSkill(skillType);
-					System.out.println("Enter quit to quit");
 				} else if (skillType.equals("fight")) {
 					if (world.region.equals("henesis")) {
+
 						Monster monster = new Slime();
-						while (monster.hp != 0) {
+
+						while (monster.hp > 0) {
 							System.out.println("You chose to fight with monster press your skill!!");
 							skillType = scanner.nextLine();
 							character.useSkill(skillType);
 							if (skillType.equals("q")) {
 								monster.monsterDie();
 								world.money += 500;
-								break;
+
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack();
 								world.getDamage(10);
 								world.money -= 200;
-								break;
+								monster.hp -= 20;
+								System.out.println("Monster's status " + monster.hp);
 							} else if (skillType.equals("e")) {
 								monster.monsterAttack2();
 								world.getDamage(101);
 							} else {
 								System.out.println("nothing happened");
-								break;
 							}
 						}
+						System.out.println("The MONSTER DEAD");
 					} else if (world.region.equals("ferrion")) {
 						Monster monster = new Stump();
-						while (monster.hp != 0) {
+						while (monster.hp > 0) {
 							System.out.println("You chose to fight with monster press your skill!!");
 							skillType = scanner.nextLine();
 							character.useSkill(skillType);
 							if (skillType.equals("q")) {
 								monster.monsterDie();
 								world.money += 500;
-								break;
+
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack2();
 								world.getDamage(101);
@@ -86,23 +84,25 @@ public class GameStart {
 								monster.monsterAttack();
 								world.getDamage(20);
 								world.money -= 500;
-								break;
+								monster.hp -= 50;
 
 							} else {
 								System.out.println("nothing happened");
-								break;
+
 							}
 						}
+						System.out.println("The MONSTER DEAD");
 					} else if (world.region.equals("elinia")) {
 						Monster monster = new Pig();
-						while (monster.hp != 0) {
+						while (monster.hp > 0) {
 							System.out.println("You chose to fight with monster press your skill!!");
 							skillType = scanner.nextLine();
 							character.useSkill(skillType);
 							if (skillType.equals("q")) {
-								monster.monsterDie();
+								System.out.println("Weak attack!");
+								monster.hp -= 10;
 								world.money += 10;
-								break;
+
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack2();
 								world.getDamage(40);
@@ -113,23 +113,24 @@ public class GameStart {
 								monster.monsterAttack();
 								world.getDamage(70);
 								world.money += 1000;
-								break;
+								monster.hp -= 70;
 
 							} else {
-								System.out.println("nothing happened");
-								break;
+								monster.monsterDie();
+								System.out.println("something happened");
+
 							}
 						}
 					} else if (world.region.equals("shadowcity")) {
 						Monster monster = new Octopus();
-						while (monster.hp != 0) {
+						while (monster.hp > 0) {
 							System.out.println("You chose to fight with monster press your skill!!");
 							skillType = scanner.nextLine();
 							character.useSkill(skillType);
 							if (skillType.equals("q")) {
 								monster.monsterDie();
 								world.money += 700;
-								break;
+
 							} else if (skillType.equals("w")) {
 								monster.monsterAttack2();
 								world.getDamage(5);
@@ -140,7 +141,7 @@ public class GameStart {
 								monster.monsterAttack();
 								world.getDamage(25);
 								world.money += -700;
-								break;
+								monster.hp -= 50;
 
 							} else {
 								System.out.println("nothing happened");
