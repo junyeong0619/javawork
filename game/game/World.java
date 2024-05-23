@@ -8,7 +8,8 @@ public class World extends Character {
 	int num = 0;
 	int breadNum = 0;
 	int waterNum = 0;
-
+	Monster monster;
+	
 	public World(String name, String stats, String jobtype) {
 		super(name, stats);
 		this.showInfo();
@@ -25,6 +26,7 @@ public class World extends Character {
 			String nothing;
 		}
 		this.bagExtend();
+		
 	}
 
 	public void showShop() {
@@ -180,6 +182,21 @@ public class World extends Character {
 			System.out.println("You wrote wrong word!");
 			// this.eatFood();
 		}
+		
+			
+		}
+	public void fight(String name,int HP, int b) {
+		System.out.println("fight");
 
+	}
+	public  String getName() {
+		return name;
+	}
+	public void setMonster() {
+		this.monster = monster;
+	}
+	public Monster getmonster() {
+		return monster;
+		
 	}
 }

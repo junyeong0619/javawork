@@ -29,26 +29,8 @@ public class GameStart {
 			jobType = "thief";
 		}
 
-		World world = new World(name, stats, jobType);
-		/*
-		System.out.println("Enter y/n to go shop:");
-		enterFlag = scanner.nextLine();
-
-		if (enterFlag.equals("y")) {
-			world.showShop();
-		} else {
-			System.out.println("Nothing");
-		}
-
-		System.out.println("Enter y/n to show your region:");
-		enterFlag = scanner.nextLine();
-
-		if (enterFlag.equals("y")) {
-			world.regionShow();
-		} else {
-			System.out.println("Nothing");
-		}
-		*/
+		//World world = new World(name, stats, jobType);
+		Fight world = new Fight(name,stats,jobType);
 		while (world.hp > 0) {
 			if (character != null) {
 				world.showHP();
