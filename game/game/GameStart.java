@@ -30,6 +30,7 @@ public class GameStart {
 		}
 
 		World world = new World(name, stats, jobType);
+		/*
 		System.out.println("Enter y/n to go shop:");
 		enterFlag = scanner.nextLine();
 
@@ -47,7 +48,7 @@ public class GameStart {
 		} else {
 			System.out.println("Nothing");
 		}
-
+		*/
 		while (world.hp > 0) {
 			if (character != null) {
 				world.showHP();
