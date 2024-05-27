@@ -163,6 +163,7 @@ public class GameStart {
 			}
 
 		}
+		scanner.close();
 		System.out.println("Game out. You lose the Game. Try again!!");
 
 	}
